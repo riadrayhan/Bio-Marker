@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream_bg"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navCard" />
+
+    <!-- Floating bottom-nav card. Cream surface + thin warm stroke so it
+         feels native to the Dashboard palette; deep shadow keeps it
+         visually lifted above scrolling content. -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/navCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/nav_card_bg"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="18dp"
+        app:strokeColor="@color/nav_card_stroke"
+        app:strokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/navToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_dashboard"
+                style="@style/Widget.Bio.NavToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nav_dashboard"
+                app:icon="@drawable/ic_nav_dashboard" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_summary"
+                style="@style/Widget.Bio.NavToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nav_summary"
+                app:icon="@drawable/ic_nav_summary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_timeline"
+                style="@style/Widget.Bio.NavToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nav_timeline"
+                app:icon="@drawable/ic_nav_dashboard" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_tools"
+                style="@style/Widget.Bio.NavToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nav_tools"
+                app:icon="@drawable/ic_nav_tools" />
+
+            <!-- Settings: kept in the toggle group (so MainActivity routing
+                 and existing ToolsFragment → settings deep-link still work)
+                 but hidden from the bottom bar per the 4-tab redesign.
+                 Reachable from the Tools tab via the Settings shortcut. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_settings"
+                style="@style/Widget.Bio.NavToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:visibility="gone"
+                android:text="@string/nav_settings"
+                app:icon="@drawable/ic_nav_settings" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

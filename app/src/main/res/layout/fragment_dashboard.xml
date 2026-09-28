@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream_bg">
+
+    <!-- Audience-tab strip kept only so legacy findViewById calls keep
+         resolving; the "Me" / "Family" tabs were removed at user request and
+         the strip itself is now hidden + has no label. -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/audienceTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cream_bg"
+        android:visibility="gone"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/cream_accent"
+        app:tabSelectedTextColor="@color/cream_text"
+        app:tabTextColor="@color/cream_text_muted"
+        app:tabIndicatorFullWidth="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ====================== TAB 1: ME =========================== -->
+            <LinearLayout
+                android:id="@+id/tabMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- AI window-end summary card. Hidden until the most recent
+                     monitoring window has finished and the AI has produced a
+                     headline + analysis + recommendations. Tap to retry the
+                     AI call (re-enqueues WindowAIAnalysisWorker). -->
+                <LinearLayout
+                    android:id="@+id/windowVerdictCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_audience_advice"
+                    android:padding="18dp"
+                    android:layout_marginBottom="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/window_verdict_title"
+                        android:textColor="@color/cream_text_muted"
+                        android:textSize="12sp"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/windowVerdictHeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cream_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingTop="6dp" />
+
+                    <TextView
+                        android:id="@+id/windowVerdictAnalysis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cream_text"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="2dp"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/windowVerdictRecsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/window_verdict_recs_title"
+                        android:textColor="@color/cream_text"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:paddingTop="12dp" />
+
+                    <TextView
+                        android:id="@+id/windowVerdictRecs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cream_text"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="3dp"
+                        android:paddingTop="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/window_verdict_metrics_title"
+                        android:textColor="@color/cream_text_muted"
+                        android:textSize="12sp"
+                        android:textAllCaps="true"
+                        android:paddingTop="14dp" />
+
+                    <TextView
+                        android:id="@+id/windowVerdictMetrics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cream_text"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="3dp"
+                        android:paddingTop="4dp"
+                        android:fontFamily="monospace" />
+
+                    <!-- On-device ML Kit translator button. Flips the AI
+                         headline/analysis/recommendations between their
+                         original language and the user's opposite locale.
+                         Click is consumed before bubbling up to the card's
+                         "retry AI" tap handler. -->
+                    <TextView
+                        android:id="@+id/windowVerdictTranslateBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:padding="10dp"
+                        android:textColor="@color/cream_accent"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/translate_to_en" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_audience_card"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/me_index_title"
+                            android:textColor="@color/cream_text_muted"
+                            android:textSize="13sp" />
+                        <TextView
+                            android:id="@+id/meIndexVerdict"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text"
+                            android:textSize="32sp"
+                            android:textStyle="bold"
+                            android:fontFamily="serif"
+                            android:paddingTop="2dp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:background="@drawable/bg_score_ring">
+                        <TextView
+                            android:id="@+id/meIndexScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/cream_accent"
+                            android:textSize="34sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_audience_card"
+                        android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/me_card_sleep_title"
+                            android:textColor="@color/cream_text_muted" android:textSize="12sp" />
+                        <TextView android:id="@+id/meSleepValue"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text" android:textSize="14sp"
+                            android:textStyle="bold" android:paddingTop="4dp" />
+                        <TextView android:id="@+id/meSleepSub"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text_muted" android:textSize="11sp"
+                            android:paddingTop="2dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_audience_card"
+                        android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/me_card_steps_title"
+                            android:textColor="@color/cream_text_muted" android:textSize="12sp" />
+                        <TextView android:id="@+id/meStepsValue"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text" android:textSize="14sp"
+                            android:textStyle="bold" android:paddingTop="4dp" />
+                        <TextView android:id="@+id/meStepsSub"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text_muted" android:textSize="11sp"
+                            android:paddingTop="2dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_audience_card"
+                        android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/me_card_social_title"
+                            android:textColor="@color/cream_text_muted" android:textSize="12sp" />
+                        <TextView android:id="@+id/meSocialValue"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text" android:textSize="14sp"
+                            android:textStyle="bold" android:paddingTop="4dp" />
+                        <TextView android:id="@+id/meSocialSub"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/cream_text_muted" android:textSize="11sp"
+                            android:paddingTop="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_audience_advice"
+                    android:padding="16dp"
+                    android:layout_marginTop="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/me_advice_title"
+                        android:textColor="@color/cream_text" android:textStyle="bold" android:textSize="14sp" />
+                    <TextView android:id="@+id/meAdviceText"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textColor="@color/cream_text" android:textSize="13sp" android:paddingTop="4dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_audience_card"
+                    android:padding="16dp"
+                    android:layout_marginTop="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/me_trend_title"
+                        android:textColor="@color/cream_text" android:textStyle="bold" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/me_trend_subtitle"
+                        android:textColor="@color/cream_text_muted" android:textSize="11sp"
+                        android:paddingTop="2dp" android:paddingBottom="8dp" />
+                    <LinearLayout android:id="@+id/trendScoreLabels"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingBottom="2dp" />
+                    <LinearLayout android:id="@+id/trendBars"
+                        android:layout_width="match_parent" android:layout_height="80dp"
+                        android:orientation="horizontal" android:gravity="bottom" />
+                    <LinearLayout android:id="@+id/trendLabels"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingTop="6dp" />
+
+                    <!-- Color-key legend so users can interpret the bars -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingTop="12dp">
+                        <View android:layout_width="10dp" android:layout_height="10dp"
+                            android:background="@color/trend_good" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/trend_legend_good"
+                            android:textColor="@color/cream_text" android:textSize="10sp"
+                            android:paddingStart="4dp" android:paddingEnd="10dp" />
+                        <View android:layout_width="10dp" android:layout_height="10dp"
+                            android:background="@color/trend_mid" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/trend_legend_mid"
+                            android:textColor="@color/cream_text" android:textSize="10sp"
+                            android:paddingStart="4dp" android:paddingEnd="10dp" />
+                        <View android:layout_width="10dp" android:layout_height="10dp"
+                            android:background="@color/trend_bad" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/trend_legend_low"
+                            android:textColor="@color/cream_text" android:textSize="10sp"
+                            android:paddingStart="4dp" android:paddingEnd="10dp" />
+                        <View android:layout_width="10dp" android:layout_height="10dp"
+                            android:background="@color/trend_alert" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/trend_legend_alert"
+                            android:textColor="@color/cream_text" android:textSize="10sp"
+                            android:paddingStart="4dp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/trend_legend_explainer"
+                        android:textColor="@color/cream_text_muted" android:textSize="10sp"
+                        android:paddingTop="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===================== TAB 2: FAMILY (removed) =====================
+                 The Family-audience tab was removed at user request — the Me
+                 tab is now the only view on the dashboard. -->
+
+            <!-- Clinician tab removed: raw PHQ-9/GAD-7 numbers, model
+                 importance and counters were not useful for end users and
+                 not clinically validated. Self-report scores are still
+                 collected via SurveyStore. -->
+        </FrameLayout>
+    </ScrollView>
+</LinearLayout>

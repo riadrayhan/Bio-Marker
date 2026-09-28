@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+    <!-- Outbound HTTPS to Groq for end-of-window AI analysis. Only invoked
+         once per monitoring window, request body is the rule-engine summary
+         (no raw sensor traces, no audio, no faces). -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Heart-rate sensor (Wear OS / Galaxy S5–S10). Phones without the
+         sensor silently no-op; on-demand camera-PPG remains as a fallback. -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <!-- Required on Android 14+ (API 34+) for sensor / wellbeing monitoring
+         foreground services. Without this, the OS refuses to keep the
+         BiomarkerService alive and every sensor collector silently fails. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <!-- Talking-time proxy: total call duration from CallLog. We do NOT
+         persist phone numbers, contact names, or call metadata other than
+         summed seconds-per-day. -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <!-- Live per-call session events (start / end) via TelephonyCallback.
+         We never store phone numbers, contact names, or audio — only
+         (startMs, endMs) of the call. Optional: if not granted, the
+         CallSessionCollector silently skips and CallLogCollector still
+         provides daily totals. -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- For mobility entropy. Coarse only — we never persist lat/lon. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.heartrate" android:required="false" />
+    <!-- Watch hardware is intentionally NOT declared as a uses-feature because
+         declaring it forces the app to be Wear-OS-only on Play Store. The
+         BODY_SENSORS permission + sensor.heartrate uses-feature above are
+         enough for paired wearables / Galaxy phones to deliver HR samples. -->
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+
+    <!-- Android 11+ package visibility: without this <queries> element
+         SpeechRecognizer.isRecognitionAvailable() returns false because the
+         app can't see the system RecognitionService. This is the single
+         most common reason "voice notes" silently produces nothing on
+         modern phones — especially for Bangla, which is provided by Google's
+         RecognitionService package (com.google.android.googlequicksearchbox /
+         com.google.android.tts). -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <package android:name="com.google.android.googlequicksearchbox" />
+        <package android:name="com.google.android.tts" />
+    </queries>
+
+    <application
+        android:name=".BiomarkerApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Bio_Marker">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.ConsentActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.SurveyActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.BreathingActivity"
+            android:exported="false"
+            android:label="@string/breath_title" />
+
+
+        <activity
+            android:name=".ui.MoodSummaryActivity"
+            android:exported="false"
+            android:label="@string/mood_summary_title" />
+
+        <!-- Quick stress-response check-in launched from the
+             StressMonitorWorker notification (HR / BP / breath → Groq advice). -->
+        <activity
+            android:name=".ui.VitalsCheckInActivity"
+            android:exported="false"
+            android:label="@string/vitals_title" />
+
+        <activity
+            android:name=".ui.VoiceNotesActivity"
+            android:exported="false"
+            android:label="@string/voice_notes_title" />
+
+        <!-- GoalEditorActivity removed: the app no longer asks the user to
+             set custom daily targets. Healthy ranges come from RuleEngine
+             and personalised guidance comes from the AI agent. -->
+
+        <service
+            android:name=".collectors.BiomarkerService"
+            android:exported="false"
+            android:foregroundServiceType="health|dataSync|microphone" />
+
+        <service
+            android:name=".collectors.BioMarkerIME"
+            android:exported="true"
+            android:label="@string/ime_label"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/ime_method" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".core.MoodCheckInReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.riad.bio_marker.MOOD_GOOD" />
+                <action android:name="com.riad.bio_marker.MOOD_NEUTRAL" />
+                <action android:name="com.riad.bio_marker.MOOD_LOW" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

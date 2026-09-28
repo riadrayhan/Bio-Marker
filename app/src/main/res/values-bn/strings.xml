@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bio_Marker</string>
+
+    <!-- Window verdict card -->
+    <string name="window_verdict_title">শেষ চেক-ইনের সারাংশ</string>
+    <string name="window_verdict_empty">একটি চেক-ইন উইন্ডো শেষ করুন — এখানে AI সারাংশ দেখা যাবে।</string>
+    <string name="window_verdict_pending">উইন্ডো শেষ — তোমার তথ্য বিশ্লেষণ হচ্ছে…</string>
+    <string name="window_verdict_recs_title">আগামীকালের জন্য পরামর্শ</string>
+    <string name="window_verdict_metrics_title">যা পরিমাপ করা হয়েছে</string>
+    <string name="window_metric_walking">হাঁটা: %1$d মি · %2$d কদম</string>
+    <string name="window_metric_location">স্থান পরিবর্তন: %1$d</string>
+    <string name="window_metric_heart">হৃদস্পন্দন: গড় %1$.0f বিপিএম</string>
+    <string name="window_metric_mood">মেজাজ: %1$s (%2$d মুখের নমুনা)</string>
+    <string name="window_metric_sleep">ঘুম: %1$.1f ঘ.</string>
+    <string name="window_metric_talking">কথা বলা: %1$d মি · %2$d কল</string>
+    <string name="window_metric_phone">ফোন ব্যবহার: %1$d মি · সোশ্যাল %2$d মি</string>
+    <string name="window_metric_routine">রুটিন স্কোর: %1$d/১০০ · ঘুম থেকে ওঠা %2$s · ঘুমাতে যাওয়া %3$s</string>
+    <string name="window_metric_bp">রক্তচাপ: %1$d/%2$d mmHg</string>
+    <string name="window_metric_bp_missing">রক্তচাপ: এই উইন্ডোতে মাপা হয়নি — মাপতে Vitals চেক-ইন খুলুন</string>
+    <string name="window_metric_actions">নোটেড অ্যাকশন: %1$d পয়েন্ট (আপনার কাজের টাইমলাইন)</string>
+    <string name="window_verdict_retry">AI কে নতুন বিশ্লেষণের জন্য জিজ্ঞেস করা হচ্ছে…</string>
+
+    <string name="routine_wake_late">আপনি দেরিতে উঠেছেন (%1$s) — আগামীকাল ৬:০০–৭:৩০ এর মধ্যে ওঠার চেষ্টা করুন।</string>
+    <string name="routine_wake_ok">আপনি প্রায় %1$s এ উঠেছেন — মোটামুটি ঠিক আছে।</string>
+    <string name="routine_wake_good">সুস্থ সকাল — আপনি %1$s এ উঠেছেন।</string>
+    <string name="routine_bed_late">আপনি দেরিতে ঘুমিয়েছেন (%1$s) — ২২:০০–২৩:০০ এর মধ্যে শোয়ার চেষ্টা করুন।</string>
+    <string name="routine_bed_ok">ঘুমাতে গেছেন প্রায় %1$s — ঠিক আছে, তবে ~২২:০০ আরও ভালো।</string>
+    <string name="routine_bed_good">সুস্থ বেডটাইম — %1$s।</string>
+    <string name="routine_sleep_poor">মাত্র %1$.1f ঘণ্টা ঘুম — বড়দের জন্য ৭–৯ ঘণ্টা প্রয়োজন।</string>
+    <string name="routine_sleep_ok">%1$.1f ঘণ্টা ঘুম — ৭–৯ ঘণ্টার লক্ষ্যের কাছাকাছি।</string>
+    <string name="routine_sleep_good">%1$.1f ঘণ্টা ঘুম — সুস্থ ৭–৯ ঘণ্টার পরিসরে।</string>
+    <string name="routine_unknown">রুটিনের তথ্য এখনও রেকর্ড হয়নি — একটি উইন্ডো শুরু করুন যাতে আমরা ঘুম ও ওঠার সময় ট্র্যাক করতে পারি।</string>
+
+    <string name="bp_dialog_title">রক্তচাপের রিডিং যোগ করুন</string>
+    <string name="bp_dialog_hint">ফোনে BP সেন্সর নেই। আপনি যদি কাফ দিয়ে BP মেপে থাকেন, এখানে দিলে AI বিশ্লেষণে আসল মান ব্যবহার হবে।</string>
+    <string name="bp_dialog_systolic_hint">সিস্টোলিক (যেমন ১২০)</string>
+    <string name="bp_dialog_diastolic_hint">ডায়াস্টোলিক (যেমন ৮০)</string>
+    <string name="bp_dialog_saved">রিডিং সংরক্ষিত হয়েছে।</string>
+    <string name="bp_dialog_invalid">বাস্তব সংখ্যা দিন (সিস্টোলিক ৬০–২৪০, ডায়াস্টোলিক ৩০–১৬০)।</string>
+
+    <string name="me_trend_subtitle">প্রতিদিনের ওয়েলবিইং স্কোর (০–১০০)। বেশি = ভালো — PHQ-9 এবং সম্পন্ন উইন্ডো থেকে গণনা করা।</string>
+    <string name="trend_legend_good">৭০+ ভালো</string>
+    <string name="trend_legend_mid">৫০–৬৯ মাঝারি</string>
+    <string name="trend_legend_low">৩০–৪৯ কম</string>
+    <string name="trend_legend_alert">&lt;৩০ সতর্কতা</string>
+    <string name="trend_legend_explainer">খালি / ধূসর বার = ঐ দিনের কোনো রেকর্ড নেই।</string>
+
+    <!-- Stress detection → vitals check-in flow -->
+    <string name="stress_channel_name">স্ট্রেস অ্যালার্ট</string>
+    <string name="stress_channel_desc">যখন মনে হবে আপনি একটু টেনশনে বা হাইপার, তখন এক-ট্যাপে ভাইটাল চেক-ইনের রিমাইন্ডার।</string>
+    <string name="stress_notif_title">📈 মনে হচ্ছে একটু হাইপার — একটু চেক করবেন?</string>
+    <string name="stress_notif_body">এই মুহূর্তের সিগন্যাল: %1$s। ৬০ সেকেন্ড নিয়ে হার্ট রেট, BP, শ্বাস লগ করুন — শান্ত হওয়ার একটা পরামর্শ দিচ্ছি।</string>
+    <string name="stress_notif_body_generic">৬০ সেকেন্ড নিয়ে হার্ট রেট, রক্তচাপ ও শ্বাস লগ করুন। শান্ত হওয়ার একটা পরামর্শ দিচ্ছি।</string>
+    <string name="stress_action_check">ভাইটাল চেক করুন</string>
+
+    <string name="vitals_title">কুইক ভাইটাল চেক-ইন</string>
+    <string name="vitals_intro">প্রতিটি ভাইটাল অ্যাপের ভেতরে লাইভ মাপা হয় — কোনো ম্যানুয়াল সংখ্যা নেই। যা পারেন মাপুন, তারপর AI থেকে শান্ত হওয়ার প্ল্যান নিন।</string>
+    <string name="vitals_reasons">কেন জিজ্ঞেস করলাম: %1$s</string>
+
+    <string name="vitals_hr_label">❤️ হার্ট রেট (ক্যামেরা দিয়ে মাপ)</string>
+    <string name="vitals_hr_instructions">পেছনের ক্যামেরার লেন্স ও ফ্ল্যাশলাইট আঙুল দিয়ে আলতো করে ঢাকুন, স্থির থাকুন, তারপর Start ট্যাপ করুন। সময় ~২৫ সেকেন্ড।</string>
+    <string name="vitals_hr_idle">পালস মাপতে Start ট্যাপ করুন।</string>
+    <string name="vitals_hr_place_finger">পেছনের ক্যামেরা ও ফ্ল্যাশ আঙুলে ঢেকে রাখুন — কাউন্টডাউন নিজেই শুরু হবে।</string>
+    <string name="vitals_hr_start">হার্ট রেট মাপ শুরু করুন</string>
+    <string name="vitals_hr_cancel">মাপ বন্ধ করুন</string>
+    <string name="vitals_hr_redo">আবার মাপুন</string>
+    <string name="vitals_hr_running">মাপা হচ্ছে… %1$d%%</string>
+    <string name="vitals_hr_done">❤️ হার্ট রেট ≈ %1$d bpm</string>
+    <string name="vitals_hr_failed">পালস ধরা গেল না — আবার চেষ্টা করুন, আঙুল দিয়ে লেন্স ও ফ্ল্যাশ পুরোপুরি ঢাকুন।</string>
+    <string name="vitals_hr_no_camera">এই ডিভাইসে ক্যামেরা পাওয়া যাচ্ছে না।</string>
+    <string name="vitals_bp_done">🩺 রক্তচাপ ≈ %1$d / %2$d mmHg (PPG অনুমান)</string>
+    <string name="vitals_bp_low_conf">🩺 BP সঙ্কেত খুব দুর্বল — আবার চেষ্টা করুন, আঙুল দিয়ে লেন্স ও ফ্ল্যাশ পুরোপুরি ঢাকুন।</string>
+
+    <string name="vitals_breath_label">🫁 শ্বাসের হার (৩০ সেকেন্ডের গণনা)</string>
+    <string name="vitals_bp_label">🩺 রক্তচাপ (ক্যামেরা থেকে আনুমানিক)</string>
+    <string name="vitals_bp_explanation">পালসের মতো একই পদ্ধতি — আঙুল ক্যামেরা ও ফ্ল্যাশের উপর রাখুন। পালসের তরঙ্গ থেকে BP অনুমান করা হয়, এটি ক্লিনিক্যাল রিডিং নয় — আনুমানিক। কোনো উদ্বেগ থাকলে আসল কাফ ব্যবহার করুন।</string>
+    <string name="vitals_bp_idle">রক্তচাপ অনুমান করতে Start ট্যাপ করুন।</string>
+    <string name="vitals_bp_start">রক্তচাপ অনুমান শুরু করুন</string>
+    <string name="vitals_bp_cancel">মাপ বন্ধ করুন</string>
+    <string name="vitals_bp_redo">আবার মাপুন</string>
+    <string name="vitals_bp_running">%1$d%%  ·  পালস ≈ %2$.0f bpm</string>
+    <string name="vitals_bp_done_estimate">🩺 রক্তচাপ ≈ %1$d / %2$d mmHg (আনুমানিক)</string>
+    <string name="vitals_bp_failed">স্থিতিশীল BP অনুমান পাওয়া গেল না — আবার চেষ্টা করুন, আঙুল দিয়ে লেন্স ও ফ্ল্যাশ ভালোভাবে ঢাকুন।</string>
+
+    <string name="vitals_breath_hint">প্রতিবার নিঃশ্বাস ভেতরে নিলে বোতামে ট্যাপ করুন। আমরা ২ দিয়ে গুণ করে প্রতি-মিনিটে রূপান্তর করব।</string>
+    <string name="vitals_breath_start">৩০ সেকেন্ডের শ্বাস গণনা শুরু</string>
+    <string name="vitals_breath_tap">প্রতিটি নিঃশ্বাসে ট্যাপ করুন</string>
+    <string name="vitals_breath_redo">আবার গণনা করুন</string>
+    <string name="vitals_breath_running">%1$d সেকেন্ড বাকি · গণনা %2$d</string>
+    <string name="vitals_breath_done">≈ %1$d বার/মিনিট</string>
+    <string name="vitals_analyze">শান্ত হওয়ার প্ল্যান নিন</string>
+    <string name="vitals_analyzing">AI কাছে শান্ত হওয়ার প্ল্যান চাওয়া হচ্ছে…</string>
+    <string name="vitals_offline_fallback">অফলাইন / AI পৌঁছানো যায়নি। নিচের শ্বাস-প্রশ্বাস অনুশীলন বা শান্ত গান চেষ্টা করুন।</string>
+    <string name="vitals_need_one">প্রথমে হার্ট রেট বা রক্তচাপ মাপুন।</string>
+    <string name="vitals_action_breathing">৪-৭-৮ শ্বাস-প্রশ্বাস ব্যায়াম খুলুন</string>
+    <string name="vitals_action_music">🎵 রিল্যাক্সিং মিউজিক চালান</string>
+    <string name="vitals_no_music">এই ডিভাইসে কোনো মিউজিক অ্যাপ বা ব্রাউজার পাওয়া যায়নি।</string>
+
+
+
+    <!-- Period picker -->
+    <string name="tools_period_3h">৩ ঘ.</string>
+    <string name="tools_period_1d">২৪ ঘ.</string>
+    <string name="tools_period_2d">৪৮ ঘ.</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_dashboard">ড্যাশবোর্ড</string>
+    <string name="nav_tools">টুলস</string>
+    <string name="nav_settings">সেটিংস</string>
+
+    <!-- Audience tabs -->
+    <string name="tab_me">আমি</string>
+    <string name="tab_family">পরিবার</string>
+    <string name="tab_clinician">চিকিৎসক</string>
+
+    <!-- Me tab -->
+    <string name="me_index_title">আজকের মানসিক স্বাস্থ্য সূচক</string>
+    <string name="me_card_sleep_title">ঘুম</string>
+    <string name="me_card_sleep_value">%1$.1f ঘণ্টা</string>
+    <string name="me_card_sleep_word_low">খুব কম বিশ্রাম</string>
+    <string name="me_card_sleep_word_mid">কিছুটা ঘুম, তবে যথেষ্ট নয়</string>
+    <string name="me_card_sleep_word_ok">যথেষ্ট ঘুম হয়েছে</string>
+    <string name="me_card_sleep_sub_low">আপনার স্বাভাবিকের চেয়ে কম</string>
+    <string name="me_card_sleep_sub_ok">আপনার স্বাভাবিকের কাছাকাছি</string>
+    <string name="me_card_steps_title">হাঁটাচলা</string>
+    <string name="me_card_steps_value">%1$,d কদম</string>
+    <string name="me_card_steps_word_none">আজ প্রায় বসেই ছিলেন</string>
+    <string name="me_card_steps_word_low">অল্প হাঁটাচলা</string>
+    <string name="me_card_steps_word_ok">ভালো হাঁটাচলা</string>
+    <string name="me_card_steps_word_high">অনেক হেঁটেছেন</string>
+    <string name="me_card_steps_sub_low">আজ একটু বেশি নড়াচড়ার চেষ্টা করুন</string>
+    <string name="me_card_steps_sub_ok">এভাবেই চালিয়ে যান</string>
+    <string name="me_card_steps_starting">এখন গণনা শুরু…</string>
+    <string name="me_card_social_title">যোগাযোগ</string>
+    <string name="me_card_social_low">আজ চুপচাপ আছেন</string>
+    <string name="me_card_social_ok">স্বাভাবিক যোগাযোগ</string>
+    <string name="me_card_social_sub">আপনি কতবার কথা বলেন তার ভিত্তিতে</string>
+    <string name="me_card_social_value">%1$d মিনিট · %2$,d টাইপ</string>
+    <string name="me_card_social_starting">এখন শুনছি…</string>
+    <string name="family_help_default">কোনো বিচার ছাড়াই শুনতে প্রস্তুত থাকুন।</string>
+    <string name="me_advice_title">পরামর্শ</string>
+    <string name="me_advice_default">আজ নিজের রুটিন বজায় রাখুন।</string>
+    <string name="me_advice_sleep">গত কয়েক দিনে ঘুম কম হয়েছে। আজ রাত ১০টার মধ্যে ঘুমানোর চেষ্টা করুন।</string>
+    <string name="me_advice_steps">আজ ১৫ মিনিট হাঁটুন — মন ভালো লাগবে।</string>
+    <string name="me_advice_social">কোনো বন্ধুর সঙ্গে কথা বলুন — অল্প আলাপও সাহায্য করে।</string>
+    <string name="me_advice_typing">টাইপ করার ফাঁকে অল্প বিরতি নিন — হাত ক্লান্ত মনে হচ্ছে।</string>
+    <string name="me_action_breathing">শ্বাস-প্রশ্বাস ব্যায়াম</string>
+    <string name="me_action_therapist">থেরাপিস্ট সংযোগ</string>
+    <string name="me_trend_title">গত ৭ দিনের ট্রেন্ড</string>
+    <string name="day_mon">সোম</string>
+    <string name="day_tue">মঙ্গল</string>
+    <string name="day_wed">বুধ</string>
+    <string name="day_thu">বৃহস্পতি</string>
+    <string name="day_fri">শুক্র</string>
+    <string name="day_sat">শনি</string>
+    <string name="day_sun">রবি</string>
+    <string name="day_today">আজ</string>
+
+    <!-- Wellness verdict -->
+    <string name="well_excellent">চমৎকার</string>
+    <string name="well_good">ভালো</string>
+    <string name="well_moderate">মাঝামাঝি</string>
+    <string name="well_low">মনোযোগ দিন</string>
+    <string name="well_alert">সাহায্য নিন</string>
+
+    <!-- Family tab -->
+    <string name="family_overview_title">আজ তিনি কেমন আছেন</string>
+    <string name="family_watch_title">যা লক্ষ্য রাখবেন</string>
+    <string name="family_help_title">আপনি যেভাবে সাহায্য করতে পারেন</string>
+    <string name="family_helpline">হেল্পলাইনে কল করুন</string>
+    <string name="family_help_listen">বিচার না করে শুনুন।</string>
+    <string name="family_help_routine">খাবার, ঘুম ও রোদের সাধারণ রুটিন উৎসাহ দিন।</string>
+    <string name="family_help_walk">একসাথে অল্প হাঁটতে যেতে বলুন।</string>
+
+    <!-- Clinician tab -->
+    <string name="clin_phq9_label">PHQ-9 (প্যাসিভ)</string>
+    <string name="clin_gad7_label">GAD-7 (প্যাসিভ)</string>
+    <string name="clin_phq9_self_label">PHQ-9 (নিজের রিপোর্ট)</string>
+    <string name="clin_gad7_self_label">GAD-7 (নিজের রিপোর্ট)</string>
+    <string name="clin_confidence_label">কনফিডেন্স</string>
+    <string name="clin_top_features">শীর্ষ অবদানকারী ফিচার</string>
+    <string name="clin_window_label">উইন্ডো</string>
+    <string name="clin_counters_title">কাঁচা উইন্ডো কাউন্টার</string>
+    <string name="clin_counter_motion">মোশন স্যাম্পল: %1$d</string>
+    <string name="clin_counter_motion_anom">মোশন অ্যানোমালি: %1$d</string>
+    <string name="clin_counter_keystrokes">কীস্ট্রোক: %1$d</string>
+    <string name="clin_counter_backspaces">ব্যাকস্পেস: %1$d</string>
+    <string name="clin_counter_steps">কদম: %1$d</string>
+    <string name="clin_counter_voice_age">শেষ ভয়েস চেক-ইন: %1$s</string>
+    <string name="clin_voice_never">কখনো না</string>
+
+    <!-- Gentle nudge channel + bodies -->
+    <string name="nudge_channel_gentle_name">সহানুভূতিশীল রিমাইন্ডার</string>
+    <string name="nudge_channel_gentle_desc">আপনার দৈনন্দিন প্যাটার্ন দেখে নরম, dismissable পরামর্শ।</string>
+    <string name="nudge_encouragement_title">ভালো করছেন আপনি 🌿</string>
+    <string name="nudge_encouragement_body">কয়েকদিন ধরে প্যাটার্ন স্থিতিশীল আছে — রুটিনটা ধরে রাখুন।</string>
+    <string name="nudge_activity_title">একটু হাঁটবেন?</string>
+    <string name="nudge_activity_body">আজ বেশিরভাগ সময় বসে আছেন। ১৫ মিনিট বাইরে গেলে মন ভালো হবে।</string>
+    <string name="nudge_sleep_title">শীঘ্রই গুছিয়ে নিন</string>
+    <string name="nudge_sleep_body">গত কয়েক দিন ঘুম কম হয়েছে। আজ রাত ১০টার মধ্যে ঘুমানোর চেষ্টা করুন।</string>
+    <string name="nudge_breathing_title">৬০ সেকেন্ডের শ্বাস?</string>
+    <string name="nudge_breathing_body">টাইপিং রিদম একটু টান টান লাগছে। ৪ নিন / ৭ ধরে রাখুন / ৮ ছাড়ুন — দু\u2019বার।</string>
+    <string name="nudge_social_title">একটা ছোট hi</string>
+    <string name="nudge_social_body">প্রিয় কাউকে message করুন — scroll করার চেয়ে অনেক বেশি কাজ দেয়।</string>
+    <string name="nudge_checkin_title">আজ কেমন আছেন?</string>
+    <string name="nudge_checkin_body">😊 😐 😔</string>
+    <string name="nudge_crisis_title">আপনি একা নন</string>
+    <string name="nudge_crisis_body">গত কিছুদিনের প্যাটার্ন কঠিন সময়ের ইঙ্গিত দিচ্ছে। হেল্পলাইন এক ট্যাপ দূরে — তারা শুনবেন।</string>
+
+    <!-- Settings -->
+    <string name="settings_nudges_title">সহানুভূতিশীল রিমাইন্ডার</string>
+    <string name="settings_quiet_mode">শান্ত মোড (gentle nudges বন্ধ)</string>
+    <string name="settings_quiet_mode_sub">Crisis সহায়তার রিমাইন্ডার কখনো বন্ধ হয় না।</string>
+
+    <!-- JITAI nudge copy -->
+    <string name="nudge_validation_title">একটু লক্ষ্য করলাম 🌿</string>
+    <string name="nudge_validation_body">আজ বাইরে গেছেন — এটা সত্যিই ভালো করেছেন।</string>
+    <string name="nudge_micro_title">২ মিনিটের একটা কাজ</string>
+    <string name="nudge_micro_body">এখন ২ মিনিট — শুধু জানালার কাছে যান।</string>
+    <string name="nudge_pattern_title">একটা ছোট প্যাটার্ন দেখলাম</string>
+    <!-- %1$s = day-of-week (e.g. রবিবার), %2$s = optional " রাতে" qualifier,
+         %3$s = signal label (ঘুম/হাঁটাচলা/মনোভাব), %4$s = direction (কম/বেশি) -->
+    <string name="nudge_pattern_body">লক্ষ্য করলাম — প্রতি %1$s%2$s আপনার %3$s %4$s হয়। এটা কি মনে হয় কোনো কিছু নিয়ে?</string>
+    <string name="nudge_pattern_body_generic">একটা সাপ্তাহিক প্যাটার্ন দেখা যাচ্ছে। একটু ভেবে দেখবেন?</string>
+    <string name="nudge_pattern_night_qual"> রাতে</string>
+    <string name="nudge_pattern_dir_low">কম</string>
+    <string name="nudge_pattern_dir_high">বেশি</string>
+
+    <!-- Signal labels -->
+    <string name="signal_sleep">ঘুম</string>
+    <string name="signal_steps">হাঁটাচলা</string>
+    <string name="signal_wellness">মনোভাব</string>
+    <!-- ===== Daily Targets / Summary feature (BN) ===== -->
+    <string name="nav_summary">সারাংশ</string>
+    <string name="nav_timeline">টাইমলাইন</string>
+    <string name="timeline_title">আজকের টাইমলাইন</string>
+    <string name="timeline_empty">আজ এখনো কোনো ইভেন্ট নেই। হাঁটা, কল, অ্যাপ ব্যবহার এবং টাইপিং সেশন এখানে দেখা যাবে।</string>
+    <string name="timeline_recs_title">পরামর্শ</string>
+    <string name="timeline_recs_empty">রাতে সারাংশ চলার পর এখানে পরামর্শ দেখা যাবে।</string>
+    <string name="timeline_events_title">ইভেন্টসমূহ</string>
+    <string name="window_ai_channel">উইন্ডো AI সারাংশ</string>
+    <string name="window_ai_notif_title">উইন্ডো বিশ্লেষণ প্রস্তুত</string>
+    <string name="window_ai_default_headline">উইন্ডো শেষ — ড্যাশবোর্ড দেখুন।</string>
+    <string name="window_ai_card_title">AI উইন্ডো বিশ্লেষণ</string>
+    <string name="window_ai_card_empty">আপনার মনিটরিং উইন্ডো শেষ হলে এখানে একটি AI সারাংশ দেখা যাবে।</string>
+    <string name="window_ai_disabled">AI বিশ্লেষণ বন্ধ (GROQ_API_KEY নেই)।</string>
+    <string name="window_ai_recs_title">পরামর্শসমূহ</string>
+    <string name="goals_title">দৈনিক লক্ষ্য</string>
+    <string name="goals_intro">বাস্তবসম্মত দৈনিক লক্ষ্য সেট করুন। অ্যাপটি নীরবে অগ্রগতি ট্র্যাক করবে এবং পরদিন সকালে সারাংশ দেখাবে।</string>
+    <string name="goals_sleep_label">ঘুম (ঘন্টা)</string>
+    <string name="goals_walk_label">হাঁটা (মিনিট)</string>
+    <string name="goals_phone_label">ফোন ব্যবহার (ঘন্টা)</string>
+    <string name="goals_talk_label">কথা বলা (মিনিট)</string>
+    <string name="goals_save">লক্ষ্য সেভ করুন</string>
+    <string name="goals_saved">লক্ষ্য সংরক্ষিত হয়েছে।</string>
+    <string name="summary_tab_title">দৈনিক সারাংশ</string>
+    <string name="summary_today_headline">আজ এ পর্যন্ত</string>
+    <string name="summary_yesterday_headline">গতকালের সারাংশ</string>
+    <string name="summary_intro">ঘুম, হাঁটা, ফোন ব্যবহার ও কথা বলা — স্বাস্থ্যকর মাত্রার সঙ্গে আপনার দিনের তুলনা। এখনই আপডেট করতে উপরের রিফ্রেশ বোতামে ট্যাপ করুন।</string>
+    <string name="summary_updated_now">এইমাত্র আপডেট হয়েছে</string>
+    <string name="summary_updated_min">%1$d মিনিট আগে আপডেট</string>
+    <string name="summary_updated_hr">%1$d ঘন্টা আগে আপডেট</string>
+    <string name="summary_run_queued">পুনরায় হিসাব করা হচ্ছে — কয়েক সেকেন্ডে আপডেট হবে…</string>
+    <string name="summary_no_data">এখনো সারাংশ নেই। আজকের সারাংশ তৈরি করতে উপরের রিফ্রেশ বোতামে ট্যাপ করুন।</string>
+    <string name="summary_set_targets">আমার লক্ষ্য সেট করুন</string>
+    <string name="summary_run_now">এখনই সারাংশ চালান</string>
+    <string name="summary_metric_sleep">ঘুম</string>
+    <string name="summary_metric_walk">হাঁটা</string>
+    <string name="summary_metric_phone">ফোন ব্যবহার</string>
+    <string name="summary_metric_talk">কথা বলা</string>
+    <string name="summary_metric_value">%1$s / %2$s</string>
+    <string name="summary_overall_good">ভালো দিন — চালিয়ে যান!</string>
+    <string name="summary_overall_mixed">মিশ্র দিন — কিছু বিষয়ে মনোযোগ দরকার।</string>
+    <string name="summary_overall_attention">মনোযোগ প্রয়োজন — নিচের বার্তাগুলো দেখুন।</string>
+    <string name="summary_zone_less">প্রত্যাশার চেয়ে কম</string>
+    <string name="summary_zone_normal">লক্ষ্যের কাছাকাছি</string>
+    <string name="summary_zone_more">প্রত্যাশার চেয়ে বেশি</string>
+    <string name="summary_channel_name">দৈনিক সারাংশ</string>
+    <string name="summary_notif_title">আপনার দৈনিক সারাংশ প্রস্তুত</string>
+    <string name="rule_sleep_less">আজ আপনি %1$s ঘন্টা ঘুমিয়েছেন। প্রাপ্তবয়স্কদের জন্য ৭–৯ ঘন্টা ঘুম স্বাস্থ্যকর — কম ঘুম মেজাজ ও মনোযোগে প্রভাব ফেলে।</string>
+    <string name="rule_sleep_normal">আপনি %1$s ঘন্টা ঘুমিয়েছেন — স্বাস্থ্যকর ৭–৯ ঘন্টার ভেতরেই। চমৎকার!</string>
+    <string name="rule_sleep_more">আপনি %1$s ঘন্টা ঘুমিয়েছেন — সাধারণ ৭–৯ ঘন্টার চেয়ে বেশি বিশ্রাম।</string>
+    <string name="rule_walk_less">আজ %1$s মিনিট হেঁটেছেন। প্রাপ্তবয়স্কদের জন্য অন্তত ৩০ মিনিট হাঁটা ভালো — সন্ধ্যায় একটু হেঁটে আসুন।</string>
+    <string name="rule_walk_normal">আজ %1$s মিনিট হেঁটেছেন — স্বাস্থ্যকর ৩০–৯০ মিনিট ব্যান্ডের ভেতরে।</string>
+    <string name="rule_walk_more">আজ %1$s মিনিট হেঁটেছেন — ৯০ মিনিটের বেশি সক্রিয় ছিলেন। দারুণ!</string>
+    <string name="rule_phone_less">ফোন ব্যবহার %1$s ঘন্টা — সাধারণ ২–৫ ঘন্টা সীমার অনেক নিচে। চমৎকার ভারসাম্য।</string>
+    <string name="rule_phone_normal">ফোন ব্যবহার %1$s ঘন্টা — সাধারণ ২–৫ ঘন্টা সীমার ভেতরেই।</string>
+    <string name="rule_phone_more">ফোন ব্যবহার %1$s ঘন্টা — ২–৫ ঘন্টা সীমার বেশি। অতিরিক্ত স্ক্রিন টাইম ঘুমে প্রভাব ফেলে।</string>
+    <string name="rule_talk_less">আজ %1$s মিনিট কথা বলেছেন — স্বাস্থ্যকর ১৫–৯০ মিনিট সীমার নিচে। কারো সাথে কথা বলুন।</string>
+    <string name="rule_talk_normal">আজ %1$s মিনিট কথা বলেছেন — স্বাস্থ্যকর ১৫–৯০ মিনিট সীমার ভেতরেই।</string>
+    <string name="rule_talk_more">আজ %1$s মিনিট কথা বলেছেন — ৯০ মিনিটের বেশি কথা। ভালো সামাজিক দিন!</string>
+    <string name="tone_line">আজকের কথোপকথনের সুর: %1$s</string>
+    <string name="tone_positive">বেশিরভাগ উষ্ণ ও ইতিবাচক</string>
+    <string name="tone_neutral">বেশিরভাগ নিরপেক্ষ / শান্ত</string>
+    <string name="tone_negative">উত্তেজিত — রাগ / দুঃখ পাওয়া গেছে</string>
+    <string name="ml_section_title">এমএল ইনসাইট (গত ৩০ দিন)</string>
+    <string name="ml_anomaly_normal">কোনো অস্বাভাবিক প্যাটার্ন পাওয়া যায়নি।</string>
+    <string name="ml_anomaly_alert">অস্বাভাবিক প্যাটার্ন: %1$s</string>
+    <string name="ml_suggestion_title">আগামীকালের জন্য প্রস্তাবিত লক্ষ্য</string>
+    <string name="ml_suggestion_body">ঘুম %1$s ঘন্টা · হাঁটা %2$d মিনিট · ফোন %3$s ঘন্টা · কথা %4$d মিনিট</string>
+    <string name="ml_pattern_title">সাপ্তাহিক প্যাটার্ন</string>
+    <string name="ml_pattern_unknown">সাপ্তাহিক প্যাটার্ন বুঝতে আরও তথ্য প্রয়োজন (≥৭ দিন)।</string>
+    <string name="ml_channel_name">আচরণগত ইনসাইট</string>
+    <string name="ml_anomaly_title">অস্বাভাবিক প্যাটার্ন</string>
+    <string name="ml_anomaly_message">পরিবর্তন: %1$s। বিস্তারিত জানতে সারাংশ ট্যাব দেখুন।</string>
+
+    <!-- Mood timer / window-end summary -->
+    <string name="mood_channel_name">মুড সারাংশ</string>
+    <string name="mood_notif_title">আপনার মুড সারাংশ প্রস্তুত</string>
+    <string name="mood_notif_message">আপনার নির্ধারিত সময়জুড়ে বেশিরভাগ সময় %1$s ছিলেন। বিস্তারিত দেখতে ট্যাপ করুন।</string>
+    <string name="mood_summary_title">আপনি কেমন ছিলেন</string>
+    <string name="mood_summary_empty">এবার আপনার মুড বোঝার মতো যথেষ্ট কিছু পাওয়া যায়নি। পরের বার মাইক্রোফোন চালু রেখে উইন্ডো শুরু করুন আর স্বাভাবিকভাবে কথা বলুন — আপনি কেমন শোনালেন তা আমরা মৃদুভাবে তুলে ধরব।</string>
+    <string name="mood_summary_range">সময়সীমা: %1$s → %2$s</string>
+    <string name="mood_summary_stats">%1$d স্যাম্পল · নেতিবাচক %2$d%%</string>
+    <string name="mood_summary_ack">বুঝেছি</string>
+    <string name="mood_breakdown_title">প্রতিটি মুডে কত সময়</string>
+    <string name="mood_transitions">এই উইন্ডোতে মুড পরিবর্তন: %1$d বার</string>
+    <string name="mood_hr_avg">গড় হৃদস্পন্দন: %1$d বিপিএম</string>
+    <string name="mood_summary_ai_title">এআই মুড বিশ্লেষণ</string>
+    <string name="mood_summary_ai_meta">বিশ্লেষণ %1$s · %2$s</string>
+    <string name="mood_summary_ai_pending">আপনার কথার ভিত্তিতে মুড বিশ্লেষণ তৈরি হচ্ছে। একটু পরে Tools → ভয়েস নোটস খুলে পূর্ণ বিবরণ দেখুন।</string>
+    <string name="mood_notif_ai_title">আপনার মুড বিশ্লেষণ প্রস্তুত</string>
+    <string name="mood_notif_ai_message">%1$s আপনার মুড কেমন ছিল দেখতে ট্যাপ করুন।</string>
+
+    <!-- Bedtime nudge -->
+    <string name="bedtime_channel_name">ঘুমানোর রিমাইন্ডার</string>
+    <string name="bedtime_channel_desc">রাত ১০:৩০-এর কাছাকাছি নরম রিমাইন্ডার যাতে ১১টার আগে ঘুমাতে পারেন।</string>
+    <string name="bedtime_sleep_title">🌙 ঘুমের প্রস্তুতি নিন</string>
+    <string name="bedtime_sleep_body">এখন রাত ১০:৩০ পেরিয়েছে। ভালো স্বাস্থ্যের জন্য রাত ১১টার আগে ঘুমানো সবচেয়ে ভালো — সকালে সতেজ অনুভব করবেন।</string>
+    <string name="bedtime_phone_title">📵 ফোনটা একটু রেখে দিন</string>
+    <string name="bedtime_phone_body">ঘুমানোর ৩০ মিনিট আগে এখনো সোশ্যাল মিডিয়ায় আছেন। এখন ফোন রেখে রিল্যাক্স করুন — এক কাপ গরম পানীয় বা হালকা স্ট্রেচ মস্তিষ্ককে শান্ত হতে সাহায্য করবে।</string>
+
+    <string name="mood_label_happy">খুশি</string>
+    <string name="mood_label_neutral">সাধারণ</string>
+    <string name="mood_label_tired">ক্লান্ত</string>
+    <string name="mood_label_stressed">চাপগ্রস্ত</string>
+    <string name="mood_label_sad">মন খারাপ</string>
+
+    <string name="mood_advice_happy">দারুণ মুড! যা কাজ করছে তা চালিয়ে যান।</string>
+    <string name="mood_advice_neutral">বেশিরভাগ সময় স্থির। একটু হাঁটুন বা প্রিয় কারো সাথে কথা বলুন।</string>
+    <string name="mood_advice_tired">ক্লান্তির লক্ষণ — আজ রাতে বেশি ঘুমান, স্ক্রিন টাইম কমান।</string>
+    <string name="mood_advice_stressed">অস্থিরতা শনাক্ত হয়েছে। Tools ট্যাব থেকে ৫ মিনিটের শ্বাস-প্রশ্বাসের অনুশীলন করুন।</string>
+    <string name="mood_advice_sad">মন খারাপ ভাব। নিজের প্রতি যত্নশীল হোন। কয়েক দিনের বেশি চললে কারো সাথে কথা বলুন।</string>
+
+    <!-- Pre-flight when starting a monitoring window -->
+    <string name="tools_need_consent">প্রথমে কনসেন্ট স্ক্রিন সম্পূর্ণ করুন — তা না হলে সেন্সর চালু হবে না।</string>
+    <string name="tools_usage_access_title">ইউজেজ অ্যাকসেস দিন</string>
+    <string name="tools_usage_access_message">আপনার ফোন ব্যবহারের সময়, স্ক্রিন আনলক ও সোশ্যাল-অ্যাপ অনুপাত মাপতে BioMarker-এর "Usage access" অনুমতি দরকার। "Open Settings" ট্যাপ করে BioMarker চালু করুন — না হলে এই মেট্রিকগুলো শূন্যই থাকবে।</string>
+    <string name="tools_usage_access_open">সেটিংস খুলুন</string>
+    <string name="tools_usage_access_skip">এখন না</string>
+
+    <!-- Verdict source qualifier (Me / Family tabs) -->
+    <string name="me_source_self">আপনার সাপ্তাহিক PHQ-9 চেক-ইন থেকে নেওয়া</string>
+    <string name="me_source_estimate">কার্যকলাপ থেকে অনুমান করা • সঠিক রিডিং পেতে ২ মিনিটের চেক-ইন দিন</string>
+    <string name="me_source_no_data">এখনো কোনো চেক-ইন নেই — ২ মিনিটের PHQ-9 দিতে ট্যাপ করুন</string>
+
+    <!-- Settings → Language card -->
+    <string name="settings_language_section">ভাষা</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_bangla">বাংলা</string>
+    <string name="tools_vitals_check">❤️ ভাইটাল মাপুন (হার্ট রেট ও BP আনুমানিক)</string>
+    <!-- Translator UI -->
+    <string name="translate_to_bn">🌐 বাংলায় অনুবাদ</string>
+    <string name="translate_to_en">🌐 Translate to English</string>
+    <string name="translate_show_original">↩ মূল লেখা</string>
+    <string name="translate_in_progress">অনুবাদ হচ্ছে…</string>
+    <string name="translate_failed">অনুবাদ ব্যর্থ — প্রথমবার মডেল ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন।</string>
+</resources>

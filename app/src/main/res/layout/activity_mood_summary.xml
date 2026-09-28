@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/cream_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ───────────── Header ───────────── -->
+        <TextView
+            android:id="@+id/moodTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cream_text"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:text="@string/mood_summary_title" />
+
+        <TextView
+            android:id="@+id/moodRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="13sp"
+            android:textColor="@color/cream_text_muted" />
+
+        <!-- ───────────── AI mood verdict (hero) ─────────────
+             Driven by the words the user spoke during the window;
+             populated from VoiceTranscriptStore.loadVerdict(). -->
+        <LinearLayout
+            android:id="@+id/aiVerdictBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_ai_verdict"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/aiVerdictTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cream_accent"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:text="@string/mood_summary_ai_title" />
+
+            <TextView
+                android:id="@+id/aiVerdictHeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/cream_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:lineSpacingMultiplier="1.1" />
+
+            <TextView
+                android:id="@+id/aiVerdictBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/cream_text"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.25" />
+
+            <TextView
+                android:id="@+id/aiVerdictRecs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/cream_text"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.35"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/aiVerdictMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/cream_text_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- ───────────── Legacy face-mood label (fallback) ───────────── -->
+        <TextView
+            android:id="@+id/moodLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/cream_text"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/moodAdvice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/cream_text_muted"
+            android:textSize="15sp"
+            android:lineSpacingMultiplier="1.25"
+            android:gravity="center" />
+
+        <!-- ───────────── Mood breakdown card ───────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_audience_card"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/moodBreakdownTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cream_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/mood_breakdown_title" />
+
+            <TableLayout
+                android:id="@+id/moodBreakdownTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:stretchColumns="0,1,2" />
+
+            <TextView
+                android:id="@+id/moodTransitions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="13sp"
+                android:textColor="@color/cream_text_muted" />
+
+            <TextView
+                android:id="@+id/moodHeartRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="13sp"
+                android:textColor="@color/cream_text_muted"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/moodStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="13sp"
+            android:textColor="@color/cream_text_muted"
+            android:gravity="center" />
+
+        <!-- ───────────── Acknowledge ───────────── -->
+        <Button
+            android:id="@+id/moodAckBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_primary_btn"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:text="@string/mood_summary_ack" />
+    </LinearLayout>
+</ScrollView>

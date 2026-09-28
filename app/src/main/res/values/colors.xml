@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Brand -->
+    <color name="brand_primary">#5C6BC0</color>
+    <color name="brand_primary_dark">#3949AB</color>
+    <color name="brand_accent">#7E57C2</color>
+    <color name="surface_card">#FFFFFFFF</color>
+    <color name="surface_muted">#F5F6FA</color>
+    <color name="text_primary">#1A1B25</color>
+    <color name="text_secondary">#5A5D72</color>
+    <color name="divider">#E5E7F0</color>
+
+    <!-- Verdict palette -->
+    <color name="verdict_excellent">#2E7D32</color>
+    <color name="verdict_good">#43A047</color>
+    <color name="verdict_fair">#F9A825</color>
+    <color name="verdict_concerning">#EF6C00</color>
+    <color name="verdict_high">#C62828</color>
+
+    <!-- Bottom nav -->
+    <color name="nav_selected">#3949AB</color>
+    <color name="nav_unselected">#9AA0B7</color>
+
+    <!-- Audience-tab cream palette (matches the user-attached design) -->
+    <color name="cream_bg">#F8F4EC</color>
+    <color name="cream_card">#FFFCF6</color>
+    <color name="cream_card_alt">#F1ECE0</color>
+    <color name="cream_stroke">#E5DDC9</color>
+    <color name="cream_text">#3A2F1B</color>
+    <color name="cream_text_muted">#7A6D55</color>
+    <color name="cream_accent">#9C6B2F</color>          <!-- ring + numbers -->
+    <color name="cream_advice_bg">#F4ECDC</color>
+
+    <!-- Bottom-nav palette — matches the Dashboard's cream theme.
+         Selected pill uses the warm amber accent; unselected stays
+         muted brown for low-attention items. -->
+    <color name="nav_card_bg">#FFFCF6</color>
+    <color name="nav_card_stroke">#E5DDC9</color>
+    <color name="nav_pill_selected">#9C6B2F</color>
+    <color name="nav_pill_selected_dark">#7A4F1F</color>
+    <color name="nav_item_selected_fg">#FFFFFF</color>
+    <color name="nav_item_unselected_fg">#7A6D55</color>
+    <color name="nav_ripple">#339C6B2F</color>
+    <color name="trend_good">#D6E5C8</color>
+    <color name="trend_mid">#F1E6CB</color>
+    <color name="trend_bad">#F5D9C6</color>
+    <color name="trend_alert">#EFC8B6</color>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Declares the languages this app ships translations for. Required on
+    Android 13+ (API 33+) so the OS-level per-app language picker
+    (Settings → Apps → Bio_Marker → Language) lists them. Without this
+    file the picker is silently disabled and the app is stuck on whatever
+    the *system* locale resolves to.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="bn" />
+</locale-config>
+

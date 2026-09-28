@@ -1,0 +1,14 @@
+{
+  "motion_energy_mean": 0.1569,
+  "motion_energy_std": 0.082,
+  "motion_anomaly_rate": 0.2247,
+  "keystroke_count": 0.1368,
+  "avg_inter_key_latency": 0.2356,
+  "backspace_rate": 0.1399,
+  "hour_sin": 0.0549,
+  "hour_cos": 0.0644,
+  "voice_energy_mean": 0.3689,
+  "voice_energy_std": 0.2285,
+  "voice_zcr_mean": 0.2291,
+  "voice_pause_ratio": 1.0
+}

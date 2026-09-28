@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Bio_Marker" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryContainer">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.Bio_Marker" parent="Base.Theme.Bio_Marker" />
+
+    <!-- Pill-shape toggle button used in the bottom nav. Icon on top, label below.
+         Filled with the warm amber accent when selected, transparent otherwise.
+         Tuned to match the Dashboard's cream palette. -->
+    <style name="Widget.Bio.NavToggle" parent="Widget.Material3.Button">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="iconGravity">textTop</item>
+        <item name="iconSize">22dp</item>
+        <item name="iconPadding">4dp</item>
+        <item name="iconTint">@color/nav_item_state</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="backgroundTint">@color/nav_bg_state</item>
+        <item name="android:textColor">@color/nav_item_state</item>
+        <item name="rippleColor">@color/nav_ripple</item>
+        <item name="strokeColor">@android:color/transparent</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

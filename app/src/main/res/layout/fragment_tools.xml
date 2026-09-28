@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_tools"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tools_lets_start_desc"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:paddingBottom="20dp" />
+
+        <!-- 1. HERO: Let's start everything -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="20dp"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tools_section_monitoring"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/monitoringStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingTop="4dp"
+                android:paddingBottom="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tools_pick_period"
+                android:textColor="@color/text_secondary"
+                android:paddingBottom="10dp" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/periodGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/period1h"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/tools_period_1h" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/period3h"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/tools_period_3h" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/period1d"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/tools_period_1d" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/period2d"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/tools_period_2d" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- Primary "Let's start" button — single tap kicks off the
+                 monitoring window, the foreground collection service, the
+                 keyboard activation prompt and the auto voice check-in. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/letsStartBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minHeight="56dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/tools_lets_start" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelSessionBtn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/tools_session_cancel" />
+
+            <!-- Legacy "Start window" — hidden, the hero button replaces it. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startSessionBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/tools_session_start" />
+        </LinearLayout>
+
+        <!-- 2. QUICK ACTIONS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="20dp"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tools_section_quick_actions"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:paddingBottom="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/vitalsCheckBtn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tools_vitals_check" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/voiceNotesBtn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/tools_voice_notes" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/openSettingsBtn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:icon="@drawable/ic_nav_settings"
+                android:text="@string/nav_settings" />
+        </LinearLayout>
+
+        <!-- 3. LIVE STATUS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="20dp"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tools_section_status"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/sensorHealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="2dp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <!-- HIDDEN controls: service toggle, compute risk, voice check-in,
+             keyboard buttons. Per redesign these aren't shown, but the
+             keyboard IME stays *enabled* — and the IDs stay here so
+             ToolsFragment.kt continues to compile and behave. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/toggleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dash_start" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/computeRiskBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dash_compute_risk" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/voiceCheckBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dash_voice_check" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/openImeSettingsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dash_open_ime_settings" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/switchKeyboardBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tools_keyboard_switch" />
+
+            <EditText
+                android:id="@+id/keyboardTestField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tools_keyboard_test_hint"
+                android:inputType="text"
+                android:importantForAutofill="no"
+                android:autofillHints="" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

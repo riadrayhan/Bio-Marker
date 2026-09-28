@@ -1,0 +1,663 @@
+<resources>
+    <string name="app_name">Bio_Marker</string>
+    <string name="ime_label">Bio_Marker Keyboard</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Summary cards -->
+    <string name="summary_status_on">Passive sensing: ON</string>
+    <string name="summary_status_off">Passive sensing: OFF</string>
+    <string name="summary_no_score">No score yet — tap "Compute risk now" in Tools.</string>
+    <string name="summary_score">Risk score</string>
+    <string name="summary_phq9">Estimated PHQ-9 (screening only)</string>
+    <string name="summary_engine">Engine: %1$s</string>
+    <string name="summary_top_features">Top contributing features</string>
+    <string name="summary_today">Today</string>
+    <string name="summary_baseline_warmup">Baseline learning… (%1$d / %2$d)</string>
+    <string name="summary_baseline_ready">Personal baseline: ready</string>
+    <string name="summary_last_phq9">Last PHQ-9: %1$d / 27</string>
+    <string name="summary_last_gad7">Last GAD-7: %1$d / 21</string>
+    <string name="summary_no_surveys">No surveys completed yet.</string>
+
+    <!-- Permissions -->
+    <string name="perm_grant_all">Grant all permissions</string>
+    <string name="perm_status_all">All permissions granted ✓</string>
+    <string name="perm_status_missing">Missing: %1$s</string>
+    <string name="perm_notif">notifications</string>
+    <string name="perm_mic">microphone</string>
+    <string name="perm_ime">Bio_Marker keyboard</string>
+
+    <!-- Tools -->
+    <string name="tools_section_collection">Data collection</string>
+    <string name="tools_section_inference">Risk inference</string>
+    <string name="tools_section_keyboard">Keyboard</string>
+    <string name="tools_keyboard_switch">Switch active keyboard</string>
+    <string name="tools_keyboard_test_label">Test it here — type to make sure timing is captured:</string>
+    <string name="tools_keyboard_test_hint">Tap and type a sentence…</string>
+    <string name="tools_keyboard_enable_hint">Enable the BioMarker Keyboard, then come back to start your session.</string>
+    <string name="tools_keyboard_switch_hint">Pick "BioMarker Keyboard" so typing rhythm is captured.</string>
+
+    <!-- Verdicts -->
+    <string name="verdict_excellent">Excellent</string>
+    <string name="verdict_good">Good</string>
+    <string name="verdict_fair">Fair</string>
+    <string name="verdict_concerning">Watch closely</string>
+    <string name="verdict_high">Needs support</string>
+
+    <!-- Activity labels -->
+    <string name="activity_sedentary">Mostly resting</string>
+    <string name="activity_light">Light activity</string>
+    <string name="activity_active">Active</string>
+    <string name="activity_very_active">Very active</string>
+
+    <!-- Typing labels -->
+    <string name="typing_no_data">Enable Bio_Marker keyboard in Settings</string>
+    <string name="typing_fast">Quick &amp; focused</string>
+    <string name="typing_normal">Normal</string>
+    <string name="typing_slow">Slower than usual</string>
+    <string name="typing_very_slow">Much slower than usual</string>
+
+    <!-- Sleep / restlessness labels -->
+    <string name="calm_steady">Steady &amp; calm</string>
+    <string name="calm_some_variation">Some restlessness</string>
+    <string name="calm_restless">Restless</string>
+
+    <!-- Dashboard cards -->
+    <string name="card_overall_title">Overall wellbeing</string>
+    <string name="card_overall_subtitle">Based on your recent activity, typing &amp; voice patterns</string>
+    <string name="card_phq9_title">Depression screening (PHQ-9)</string>
+    <string name="card_gad7_title">Anxiety screening (GAD-7)</string>
+    <string name="card_phq9_none">No PHQ-9 result yet</string>
+    <string name="card_gad7_none">No GAD-7 result yet</string>
+    <string name="card_activity_title">Activity</string>
+    <string name="card_typing_title">Typing rhythm</string>
+    <string name="card_calm_title">Sleep &amp; calmness</string>
+    <string name="card_voice_title">Voice prosody</string>
+    <string name="card_voice_none">Take a Voice check-in from Tools</string>
+    <string name="card_session_running">Monitoring in progress</string>
+    <string name="card_session_done">Latest result</string>
+    <string name="card_session_none">Pick a check-in window in Tools to get a verdict</string>
+    <string name="card_session_remaining">%1$s remaining</string>
+    <string name="card_session_period">%1$d-%2$s check-in</string>
+    <string name="unit_hour">hour</string>
+    <string name="unit_hours">hours</string>
+    <string name="unit_day">day</string>
+    <string name="unit_days">days</string>
+    <string name="time_d_h">%1$dd %2$dh</string>
+    <string name="time_h_m">%1$dh %2$dm</string>
+    <string name="time_m">%1$dm</string>
+
+    <!-- Monitoring tools -->
+    <string name="tools_section_monitoring">Check-in window</string>
+    <string name="tools_pick_period">Choose how long you want monitored</string>
+    <string name="tools_lets_start">Let\'s start</string>
+    <string name="tools_lets_start_desc">One tap turns on the sensors, keyboard tracking, voice listening and the monitoring window.</string>
+    <string name="tools_lets_finish">Let\'s finish</string>
+    <string name="tools_finished_toast">Monitoring finished — building your mood result…</string>
+    <string name="tools_section_quick_actions">Quick actions</string>
+    <string name="tools_section_status">Live status</string>
+    <string name="tools_period_1h">1 h</string>
+    <string name="tools_period_3h">3 h</string>
+    <string name="tools_period_1d">24 h</string>
+    <string name="tools_period_2d">48 h</string>
+    <!-- Legacy keys kept so older layouts referencing them still compile. -->
+    <string name="tools_period_5h">5 h</string>
+    <string name="tools_period_3d">3 days</string>
+
+    <!-- Window verdict card (shown on Me tab once a window finishes and the
+         AI agent has produced a final summary). -->
+    <string name="window_verdict_title">Last check-in summary</string>
+    <string name="window_verdict_empty">Finish a check-in window to see your AI summary here.</string>
+    <string name="window_verdict_pending">Window finished — analysing your data…</string>
+    <string name="window_verdict_recs_title">Suggestions for tomorrow</string>
+    <string name="window_verdict_metrics_title">What we measured</string>
+    <string name="window_metric_walking">Walking: %1$d min · %2$d steps</string>
+    <string name="window_metric_location">Location changes: %1$d</string>
+    <string name="window_metric_heart">Heart rate: avg %1$.0f bpm</string>
+    <string name="window_metric_mood">Mood: %1$s (%2$d face samples)</string>
+    <string name="window_metric_sleep">Sleep: %1$.1f h</string>
+    <string name="window_metric_talking">Talking: %1$d min · %2$d calls</string>
+    <string name="window_metric_phone">Phone use: %1$d min · social %2$d min</string>
+    <string name="window_metric_routine">Routine score: %1$d/100 · wake %2$s · bed %3$s</string>
+    <string name="window_metric_bp">Blood pressure: %1$d/%2$d mmHg</string>
+    <string name="window_metric_bp_missing">Blood pressure: not measured this window — open Vitals check-in to measure it</string>
+    <string name="window_metric_actions">Actions noted: %1$d points (timeline of your activities)</string>
+    <string name="window_verdict_retry">Asking the AI for a fresh analysis…</string>
+
+    <!-- Routine analyser (RoutineAnalyzer) -->
+    <string name="routine_wake_late">Woke up late at %1$s — try aiming for 06:00–07:30 tomorrow.</string>
+    <string name="routine_wake_ok">Woke up around %1$s — close to a healthy morning start.</string>
+    <string name="routine_wake_good">Healthy wake-up at %1$s.</string>
+    <string name="routine_bed_late">Went to bed late (%1$s) — try winding down by 22:00–23:00.</string>
+    <string name="routine_bed_ok">Bedtime around %1$s — fine, but earlier (≈22:00) is better.</string>
+    <string name="routine_bed_good">Healthy bedtime at %1$s.</string>
+    <string name="routine_sleep_poor">Only %1$.1f h of sleep — adults need 7–9 h to feel rested.</string>
+    <string name="routine_sleep_ok">%1$.1f h of sleep — close to the 7–9 h target.</string>
+    <string name="routine_sleep_good">%1$.1f h of sleep — right in the healthy 7–9 h range.</string>
+    <string name="routine_unknown">Routine info not yet recorded — start a window so we can track your sleep &amp; wake-up times.</string>
+
+    <!-- Manual blood-pressure entry dialog -->
+    <string name="bp_dialog_title">Add a blood-pressure reading</string>
+    <string name="bp_dialog_hint">Phones don\'t have a BP sensor. If you\'ve measured your blood pressure with a cuff, you can enter it here so the AI summary uses real values.</string>
+    <string name="bp_dialog_systolic_hint">Systolic (e.g. 120)</string>
+    <string name="bp_dialog_diastolic_hint">Diastolic (e.g. 80)</string>
+    <string name="bp_dialog_saved">Reading saved.</string>
+    <string name="bp_dialog_invalid">Please enter realistic numbers (systolic 60–240, diastolic 30–160).</string>
+
+    <!-- 7-day trend explainer + legend (the bar chart was confusing) -->
+    <string name="me_trend_subtitle">A daily wellbeing score (0–100). Higher is better — based on PHQ-9 self-reports and your finished monitoring windows.</string>
+    <string name="trend_legend_good">70+ Good</string>
+    <string name="trend_legend_mid">50–69 OK</string>
+    <string name="trend_legend_low">30–49 Low</string>
+    <string name="trend_legend_alert">&lt;30 Alert</string>
+    <string name="trend_legend_explainer">Empty / grey bar = no record for that day.</string>
+
+    <!-- Stress detection → vitals check-in flow -->
+    <string name="stress_channel_name">Stress alerts</string>
+    <string name="stress_channel_desc">Heads-up when the app notices you may be tense or hyper, with a one-tap vitals check-in.</string>
+    <string name="stress_notif_title">📈 You seem a bit hyper — quick check?</string>
+    <string name="stress_notif_body">Signals just now: %1$s. Take 60 s to log your heart rate, BP and breathing — I\'ll suggest a calm next step.</string>
+    <string name="stress_notif_body_generic">Take 60 s to log your heart rate, blood pressure and breathing. I\'ll suggest a calm next step.</string>
+    <string name="stress_action_check">Check vitals</string>
+
+    <!-- VitalsCheckInActivity -->
+    <string name="vitals_title">Quick vitals check-in</string>
+    <string name="vitals_intro">Each vital is measured live inside the app — no manual numbers. Take whatever measurements you can, then ask the AI for a calm-down plan.</string>
+    <string name="vitals_reasons">Why I asked: %1$s</string>
+    <string name="vitals_hr_label">❤️ Heart rate (camera measurement)</string>
+    <string name="vitals_hr_instructions">Cover the BACK camera lens AND the flashlight gently with your fingertip, sit still, then tap Start. ~25 seconds.</string>
+    <string name="vitals_hr_idle">Tap Start to measure your pulse.</string>
+    <string name="vitals_hr_place_finger">Cover the back lens AND flash with your fingertip — countdown will start automatically.</string>
+    <string name="vitals_hr_start">Start heart-rate measurement</string>
+    <string name="vitals_hr_cancel">Stop measurement</string>
+    <string name="vitals_hr_redo">Redo measurement</string>
+    <string name="vitals_hr_running">Measuring… %1$d%%</string>
+    <string name="vitals_hr_done">❤️ Heart rate ≈ %1$d bpm</string>
+    <string name="vitals_hr_failed">Couldn\'t lock on a pulse — try again, finger fully covering both lens &amp; flash.</string>
+    <string name="vitals_hr_no_camera">Camera unavailable on this device.</string>
+    <string name="vitals_bp_done">🩺 Blood pressure ≈ %1$d / %2$d mmHg (PPG estimate)</string>
+    <string name="vitals_bp_low_conf">🩺 BP signal too weak to estimate — try again, finger fully covering lens &amp; flash.</string>
+
+    <string name="vitals_breath_label">🫁 Breath rate (30-second count)</string>
+    <string name="vitals_bp_label">🩺 Blood pressure (camera estimate)</string>
+    <string name="vitals_bp_explanation">Same fingertip-on-the-camera measurement as the pulse. We use the pulse waveform to estimate BP — it\'s an estimate, not a clinical reading. For any concern please use a real cuff.</string>
+    <string name="vitals_bp_idle">Tap Start to estimate your blood pressure.</string>
+    <string name="vitals_bp_start">Start blood-pressure estimate</string>
+    <string name="vitals_bp_cancel">Stop measurement</string>
+    <string name="vitals_bp_redo">Redo measurement</string>
+    <string name="vitals_bp_running">%1$d%%  ·  reading pulse ≈ %2$.0f bpm</string>
+    <string name="vitals_bp_done_estimate">🩺 Blood pressure ≈ %1$d / %2$d mmHg (estimate)</string>
+    <string name="vitals_bp_failed">Couldn\'t get a stable BP estimate — try again, finger fully covering lens &amp; flash.</string>
+
+    <string name="vitals_breath_hint">Tap the button each time you breathe IN. We\'ll multiply by 2 to get breaths/minute.</string>
+    <string name="vitals_breath_start">Start 30-second breath count</string>
+    <string name="vitals_breath_tap">Tap on each inhale</string>
+    <string name="vitals_breath_redo">Redo breath count</string>
+    <string name="vitals_breath_running">%1$d s left · counted %2$d</string>
+    <string name="vitals_breath_done">≈ %1$d breaths/min</string>
+    <string name="vitals_analyze">Get a calm-down plan</string>
+    <string name="vitals_analyzing">Asking the AI for a calm-down plan…</string>
+    <string name="vitals_offline_fallback">Offline / AI unreachable. Try the in-app breathing exercise or a calm song below.</string>
+    <string name="vitals_need_one">Please measure heart rate or blood pressure first.</string>
+    <string name="vitals_action_breathing">Open 4-7-8 breathing exercise</string>
+    <string name="vitals_action_music">🎵 Play relaxing music</string>
+    <string name="vitals_no_music">No music app or browser found on this device.</string>
+
+
+    <string name="tools_session_active">Window active — ends in %1$s</string>
+    <string name="tools_session_finished">Window completed. Start a new one to refresh.</string>
+    <string name="tools_session_start">Start window</string>
+    <string name="tools_session_cancel">Cancel current window</string>
+
+    <!-- Consent screen -->
+    <string name="consent_title">Welcome to Bio_Marker</string>
+    <string name="consent_intro">This research app passively collects behavioral signals from your phone to help build a digital biomarker for mental wellbeing. You stay in control: nothing leaves your device without your consent, and you can stop at any time.</string>
+    <string name="consent_motion">Motion sensor data (accelerometer) — used for activity, gait and sleep restlessness features.</string>
+    <string name="consent_keystroke">Typing dynamics (timing only, never the text) — used to estimate cognitive load and psychomotor patterns.</string>
+    <string name="consent_usage">App usage statistics — total screen time and rough usage patterns.</string>
+    <string name="consent_disclaimer">This app is NOT a medical device. It does not diagnose any condition. If you are in crisis, call your local emergency services.</string>
+    <string name="consent_agree">I have read and consent to the data collection above</string>
+    <string name="consent_continue">Continue</string>
+
+    <!-- Dashboard -->
+    <string name="dash_title">Bio_Marker Dashboard</string>
+    <string name="dash_service_on">Collection: ON</string>
+    <string name="dash_service_off">Collection: OFF</string>
+    <string name="dash_start">Start Collection</string>
+    <string name="dash_stop">Stop Collection</string>
+    <string name="dash_open_ime_settings">Enable Bio_Marker Keyboard</string>
+    <string name="dash_motion_samples">Motion samples (today): %1$d</string>
+    <string name="dash_motion_energy">Recent motion energy: %1$.3f</string>
+    <string name="dash_keystrokes">Keystrokes captured (timing-only): %1$d</string>
+    <string name="dash_avg_latency">Avg inter-key latency: %1$d ms</string>
+    <string name="dash_anomalies">Motion anomalies (today): %1$d</string>
+    <string name="dash_backspace_rate">Backspace rate (today): %1$.1f%%</string>
+    <string name="dash_compute_risk">Compute risk score now</string>
+    <string name="dash_risk_none">Risk score: not yet computed</string>
+    <string name="dash_risk">Risk score: %1$.2f  (engine: %2$s)</string>
+    <string name="dash_phq9">Estimated PHQ-9 (screening only): %1$d / 27</string>
+    <string name="dash_top_features">Top contributing features: %1$s</string>
+    <string name="dash_baseline_warmup">Personal baseline learning… (%1$d / %2$d samples)</string>
+    <string name="dash_baseline_ready">Personal baseline: ready</string>
+    <string name="dash_revoke">Revoke consent &amp; clear data</string>
+
+    <!-- Voice -->
+    <string name="dash_voice_check">Voice check-in (5 s)</string>
+    <string name="dash_voice_recording">Recording… please speak naturally</string>
+    <string name="dash_voice_done">Voice features captured (audio discarded)</string>
+    <string name="dash_voice_done_detail">Voice ✓  energy %1$.3f · std %2$.3f · ZCR %3$.3f · pauses %4$.0f%%</string>
+    <string name="dash_voice_perm_denied">Microphone permission denied</string>
+    <string name="dash_voice_unavailable">Microphone unavailable</string>
+    <string name="voice_result_title">Voice check-in result</string>
+    <string name="voice_wellness_score">Voice expressiveness: %1$d / 100</string>
+    <string name="result_ok">OK</string>
+
+    <!-- Vitals (camera-PPG fingertip heart rate). Some legacy keys are
+         retained because VitalsCheckInActivity references them. -->
+    <string name="tools_vitals_check">❤️ Measure vitals (heart rate &amp; BP estimate)</string>
+    <string name="dash_face_perm_denied">Camera permission denied</string>
+    <string name="dash_face_unavailable">Camera unavailable</string>
+
+    <!-- Research / Slice 6 -->
+    <string name="dash_research_section">Research kit</string>
+    <!-- In-app language switcher (Settings → Language card) -->
+    <string name="settings_language_section">Language</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_bangla">বাংলা</string>
+    <string name="dash_participant_id">Participant ID: %1$s</string>
+    <string name="dash_phq9_btn">Take PHQ-9 survey</string>
+    <string name="dash_gad7_btn">Take GAD-7 survey</string>
+    <string name="dash_phq9_last">Last PHQ-9: %1$d / 27</string>
+    <string name="dash_gad7_last">Last GAD-7: %1$d / 21</string>
+    <string name="dash_export_csv">Export research CSV</string>
+    <string name="dash_export_share">Share Bio_Marker export</string>
+
+    <!-- Notification -->
+    <string name="notif_channel_name">Bio_Marker Collection</string>
+    <string name="notif_title">Bio_Marker is active</string>
+    <string name="notif_text">Passive sensing is running. Tap to manage.</string>
+
+    <!-- Crisis notification -->
+    <string name="crisis_channel_name">Wellbeing alerts</string>
+    <string name="crisis_channel_desc">Sent only when behavioural patterns suggest you may benefit from support.</string>
+    <string name="crisis_title">Checking in on you</string>
+    <string name="crisis_text">Your recent patterns suggest you may benefit from talking to someone.</string>
+    <string name="crisis_big_text">Bio_Marker noticed your recent activity, sleep and typing patterns differ from your usual baseline. This is just a screening signal — not a diagnosis. If you would like to talk to someone right now, the helpline is one tap away.</string>
+    <string name="crisis_action_call">Call helpline</string>
+
+    <!-- Crisis trigger reasons -->
+    <string name="crisis_reasons_prefix">Why you\'re seeing this:</string>
+    <string name="crisis_reason_sustained">Risk has stayed very high for two days.</string>
+    <string name="crisis_reason_rapid_drop">Wellbeing dropped sharply in the last 72 hours.</string>
+    <string name="crisis_reason_deep_night">Phone use after 02:00 for several nights.</string>
+    <string name="crisis_reason_sleep">Very little sleep for three nights in a row.</string>
+    <string name="crisis_reason_voice">Voice energy is well below your usual baseline.</string>
+
+    <!-- Breathing exercise -->
+    <string name="breath_title">Breathing exercise</string>
+    <string name="breath_subtitle">4 in · 7 hold · 8 out · 4 rounds</string>
+    <string name="breath_phase_inhale">Breathe in</string>
+    <string name="breath_phase_hold">Hold</string>
+    <string name="breath_phase_exhale">Breathe out</string>
+    <string name="breath_round_n">Round %1$d / %2$d</string>
+    <string name="breath_done">Done</string>
+    <string name="breath_done_msg">Nicely done 🌿</string>
+
+    <!-- Per-signal consent (Settings) -->
+    <string name="consent_signal_motion">Motion &amp; activity</string>
+    <string name="consent_signal_keystroke">Typing rhythm</string>
+    <string name="consent_signal_voice">Voice prosody</string>
+    <string name="consent_signal_usage">App usage</string>
+    <string name="consent_signal_location">Mobility (anonymised)</string>
+    <string name="consent_signal_sleep">Sleep estimation</string>
+    <string name="consent_signal_sync">Share with my clinician</string>
+    <string name="consent_signal_fl">Help improve the model</string>
+
+    <!-- Confidence / coverage -->
+    <string name="confidence_low">Low confidence</string>
+    <string name="confidence_moderate">Moderate confidence</string>
+    <string name="confidence_high">High confidence</string>
+    <string name="confidence_low_hint">Limited data this window — keep the app running longer for a better read.</string>
+    <string name="screening_subtitle">PHQ-9 estimate · %1$s</string>
+    <string name="screening_subtitle_gad7">GAD-7 estimate · %1$s</string>
+    <string name="screening_section_title">Screening result</string>
+    <string name="screening_disclaimer">Screening signal only — not a diagnosis. Take the in-app PHQ-9 / GAD-7 to confirm.</string>
+
+    <!-- Clinical band labels -->
+    <string name="phq9_band_minimal">Minimal range</string>
+    <string name="phq9_band_mild">Mild range</string>
+    <string name="phq9_band_moderate">Moderate range</string>
+    <string name="phq9_band_modsevere">Moderately severe range</string>
+    <string name="phq9_band_severe">Severe range</string>
+    <string name="gad7_band_minimal">Minimal range</string>
+    <string name="gad7_band_mild">Mild range</string>
+    <string name="gad7_band_moderate">Moderate range</string>
+    <string name="gad7_band_severe">Severe range</string>
+
+    <!-- Why this verdict -->
+    <string name="why_title">Why this verdict</string>
+    <string name="why_expand">Tap to expand</string>
+    <string name="why_contrib_sedentariness">Lower-than-usual physical activity</string>
+    <string name="why_contrib_slow_typing">Slower typing rhythm than your baseline</string>
+    <string name="why_contrib_concentration">More typing corrections than usual</string>
+    <string name="why_contrib_withdrawal">Less device interaction than usual</string>
+    <string name="why_contrib_restlessness">More restless motion than usual</string>
+    <string name="why_contrib_voice_flat">Flatter voice prosody in last check-in</string>
+
+    <!-- New screening cards -->
+    <string name="card_dep_title">Depression screening</string>
+    <string name="card_anx_title">Anxiety screening</string>
+    <string name="card_dep_emoji">🧠</string>
+    <string name="card_anx_emoji">💗</string>
+
+    <!-- Session ring -->
+    <string name="session_ring_done">Done</string>
+
+    <!-- Audience tabs -->
+    <string name="tab_me">Me</string>
+    <string name="tab_family">Family</string>
+    <string name="tab_clinician">Clinician</string>
+
+    <!-- Me tab -->
+    <string name="me_index_title">Today\'s mental wellbeing index</string>
+    <string name="me_card_sleep_title">Sleep</string>
+    <string name="me_card_sleep_value">%1$.1f hours</string>
+    <string name="me_card_sleep_word_low">Very little rest</string>
+    <string name="me_card_sleep_word_mid">Some rest, not enough</string>
+    <string name="me_card_sleep_word_ok">Restful sleep</string>
+    <string name="me_card_sleep_sub_low">Less than usual for you</string>
+    <string name="me_card_sleep_sub_ok">Around your normal</string>
+    <string name="me_card_steps_title">Walking</string>
+    <string name="me_card_steps_value">%1$,d steps</string>
+    <string name="me_card_steps_word_none">Mostly sitting today</string>
+    <string name="me_card_steps_word_low">Light movement</string>
+    <string name="me_card_steps_word_ok">Good movement</string>
+    <string name="me_card_steps_word_high">Lots of walking</string>
+    <string name="me_card_steps_sub_low">Try to move a little more</string>
+    <string name="me_card_steps_sub_ok">Keep it up</string>
+    <!-- Shown when collection just started so the card displays a live "0
+         steps · counting…" instead of the discouraging "no data yet". -->
+    <string name="me_card_steps_starting">Counting now…</string>
+    <string name="me_card_social_title">Connection</string>
+    <string name="me_card_social_low">Quiet today</string>
+    <string name="me_card_social_ok">Connecting normally</string>
+    <string name="me_card_social_sub">Based on how often you chat</string>
+    <!-- Live connection value: %1$d call+chat minutes, %2$d keystrokes typed -->
+    <string name="me_card_social_value">%1$d min · %2$,d keys</string>
+    <string name="me_card_social_starting">Listening now…</string>
+    <!-- Family tab dynamic help line (replaces the previously hard-coded
+         three suggestions so we don't show duplicate advice). -->
+    <string name="family_help_default">Be available to listen, without judgement.</string>
+    <string name="me_advice_title">Advice</string>
+    <string name="me_advice_default">Keep your routine steady today.</string>
+    <string name="me_advice_sleep">Sleep has been low for a few days. Try to be in bed by 10\u202fpm tonight.</string>
+    <string name="me_advice_steps">Try a 15-minute walk today to lift your mood.</string>
+    <string name="me_advice_social">Reach out to a friend — a short chat helps.</string>
+    <string name="me_advice_typing">Take small breaks while you type — your hands are tense.</string>
+    <string name="me_action_breathing">Breathing exercise</string>
+    <string name="me_action_therapist">Therapist connect</string>
+    <string name="me_trend_title">Last 7 days trend</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+    <string name="day_today">Today</string>
+
+    <!-- Wellness verdict (positive framing for the Me tab) -->
+    <string name="well_excellent">Excellent</string>
+    <string name="well_good">Good</string>
+    <string name="well_moderate">Moderate</string>
+    <string name="well_low">Needs attention</string>
+    <string name="well_alert">Need support</string>
+    <string name="well_no_data">No data yet</string>
+    <string name="well_no_data_sub">Start a check-in window in Tools so we can measure something real.</string>
+    <!-- Source qualifier so the verdict is honest about whether it came from
+         a clinically-validated self-report (PHQ-9 / GAD-7) or just a sensor
+         estimate. The PHQ-9 / GAD-7 questionnaires are the only validated
+         measurement here; passive sensor scores are heuristic only. -->
+    <string name="me_source_self">Based on your weekly PHQ-9 check-in</string>
+    <string name="me_source_estimate">Estimated from activity • take the 2-min check-in for an accurate reading</string>
+    <string name="me_source_no_data">No check-in yet — tap to take the 2-min PHQ-9</string>
+    <string name="card_no_data">— no data yet</string>
+
+    <!-- Family tab -->
+    <string name="family_overview_title">How they\'re doing today</string>
+    <string name="family_watch_title">What to watch for</string>
+    <string name="family_help_title">How you can help</string>
+    <string name="family_helpline">Call helpline</string>
+    <string name="family_help_listen">Be available to listen, without judgement.</string>
+    <string name="family_help_routine">Encourage simple routines: regular meals, sleep, sunlight.</string>
+    <string name="family_help_walk">Suggest a short walk together.</string>
+
+    <!-- Clinician tab -->
+    <string name="clin_phq9_label">PHQ-9 (passive)</string>
+    <string name="clin_gad7_label">GAD-7 (passive)</string>
+    <string name="clin_phq9_self_label">PHQ-9 (self-report)</string>
+    <string name="clin_gad7_self_label">GAD-7 (self-report)</string>
+    <string name="clin_score_format">%1$d</string>
+    <string name="clin_confidence_label">Confidence</string>
+    <string name="clin_top_features">Top contributing features</string>
+    <string name="clin_model_importance">Model importance (top 3): %1$s</string>
+    <string name="clin_window_label">Window</string>
+    <string name="clin_counters_title">Raw window counters</string>
+    <string name="clin_counter_motion">Motion samples: %1$d</string>
+    <string name="clin_counter_motion_anom">Motion anomalies: %1$d</string>
+    <string name="clin_counter_keystrokes">Keystrokes: %1$d</string>
+    <string name="clin_counter_backspaces">Backspaces: %1$d</string>
+    <string name="clin_counter_steps">Steps: %1$d</string>
+    <string name="clin_counter_voice_age">Last voice check-in: %1$s</string>
+    <string name="clin_voice_never">never</string>
+
+    <!-- Gentle nudge channel + bodies -->
+    <string name="nudge_channel_gentle_name">Gentle nudges</string>
+    <string name="nudge_channel_gentle_desc">Soft, dismissable suggestions when your activity / sleep / typing patterns suggest a small action could help.</string>
+    <string name="nudge_encouragement_title">You\'re doing well 🌿</string>
+    <string name="nudge_encouragement_body">Your patterns have stayed steady — keep your routine, you\'re on a good streak.</string>
+    <string name="nudge_activity_title">A short walk?</string>
+    <string name="nudge_activity_body">You\'ve been mostly resting today. 15 minutes outside lifts mood more than you\'d guess.</string>
+    <string name="nudge_sleep_title">Wind down soon</string>
+    <string name="nudge_sleep_body">Your sleep has been low for a few days. Try to be in bed by 10\u202fpm tonight.</string>
+    <string name="nudge_breathing_title">60-second breathing?</string>
+    <string name="nudge_breathing_body">Your typing rhythm looks tense. Try 4 in / 7 hold / 8 out — twice.</string>
+    <string name="nudge_social_title">A short hello</string>
+    <string name="nudge_social_body">Reaching out to one person you trust often helps more than scrolling.</string>
+    <string name="nudge_checkin_title">How are you today?</string>
+    <string name="nudge_checkin_body">😊 😐 😔</string>
+    <string name="nudge_crisis_title">You don\'t have to do this alone</string>
+    <string name="nudge_crisis_body">Your patterns suggest a hard stretch. The helpline is one tap away — they\'ll listen.</string>
+
+    <!-- Settings: quiet mode -->
+    <string name="settings_nudges_title">Gentle nudges</string>
+    <string name="settings_quiet_mode">Quiet mode (silence gentle nudges)</string>
+    <string name="settings_quiet_mode_sub">Crisis support nudges are never silenced.</string>
+
+    <!-- JITAI nudge copy -->
+    <string name="nudge_validation_title">Just noticed 🌿</string>
+    <string name="nudge_validation_body">You got out today — that\'s genuinely good. Nothing more needed.</string>
+    <string name="nudge_micro_title">A 2-minute thing</string>
+    <string name="nudge_micro_body">Right now, 2 minutes — just walk to the window.</string>
+    <string name="nudge_pattern_title">A small pattern I noticed</string>
+    <!-- %1$s = day, %2$s = optional " nights" qualifier, %3$s = signal, %4$s = direction -->
+    <string name="nudge_pattern_body">I noticed — your %3$s tends to be %4$s on %1$s%2$s. Anything on your mind about that?</string>
+    <string name="nudge_pattern_body_generic">A weekly pattern showed up. Want to look at it together?</string>
+    <string name="nudge_pattern_night_qual"> nights</string>
+    <string name="nudge_pattern_dir_low">lower</string>
+    <string name="nudge_pattern_dir_high">higher</string>
+
+    <!-- Signal labels (used in the pattern body) -->
+    <string name="signal_sleep">sleep</string>
+    <string name="signal_steps">activity</string>
+    <string name="signal_wellness">mood</string>
+
+    <!-- ===== Daily Targets / Summary feature ===== -->
+    <string name="nav_summary">Summary</string>
+    <string name="nav_timeline">Timeline</string>
+    <!-- Timeline screen -->
+    <string name="timeline_title">Today\'s timeline</string>
+    <string name="timeline_empty">No events yet today. Walking, calls, app sessions and typing sessions will appear here as they happen.</string>
+    <string name="timeline_recs_title">Recommendations</string>
+    <string name="timeline_recs_empty">Recommendations will appear here after the nightly summary runs.</string>
+    <string name="timeline_events_title">Events</string>
+    <!-- Window AI analysis -->
+    <string name="window_ai_channel">Window AI summary</string>
+    <string name="window_ai_notif_title">Window analysis ready</string>
+    <string name="window_ai_default_headline">Window finished — see the dashboard.</string>
+    <string name="window_ai_card_title">AI window analysis</string>
+    <string name="window_ai_card_empty">When your monitoring window ends, an AI-generated summary of how it went will appear here.</string>
+    <string name="window_ai_disabled">AI analysis is disabled (no GROQ_API_KEY).</string>
+    <string name="window_ai_recs_title">Suggested actions</string>
+
+    <string name="goals_title">Daily targets</string>
+    <string name="goals_intro">Set realistic daily targets. The app will quietly track how close you get and show a summary tomorrow morning.</string>
+    <string name="goals_sleep_label">Sleep (hours)</string>
+    <string name="goals_walk_label">Walking (minutes)</string>
+    <string name="goals_phone_label">Phone usage (hours)</string>
+    <string name="goals_talk_label">Talking (minutes)</string>
+    <string name="goals_save">Save targets</string>
+    <string name="goals_saved">Targets saved.</string>
+
+    <string name="summary_tab_title">Daily summary</string>
+    <string name="summary_today_headline">Today so far</string>
+    <string name="summary_yesterday_headline">Yesterday\'s summary</string>
+    <string name="summary_intro">A simple recap of how your day stacks up against healthy ranges for sleep, walking, screen time and talking. Tap the refresh button to recompute now.</string>
+    <string name="summary_updated_now">Just updated</string>
+    <string name="summary_updated_min">Updated %1$d min ago</string>
+    <string name="summary_updated_hr">Updated %1$d h ago</string>
+    <string name="summary_run_queued">Recomputing — refreshes in a few seconds…</string>
+    <string name="summary_no_data">No summary yet. Tap the refresh button above to generate today\'s recap.</string>
+    <string name="summary_set_targets">Set my targets</string>
+    <string name="summary_run_now">Run summary now</string>
+    <string name="summary_metric_sleep">Sleep</string>
+    <string name="summary_metric_walk">Walking</string>
+    <string name="summary_metric_phone">Phone usage</string>
+    <string name="summary_metric_talk">Talking</string>
+    <string name="summary_metric_value">%1$s / %2$s</string>
+    <string name="summary_overall_good">Good day — keep it up!</string>
+    <string name="summary_overall_mixed">Mixed day — some metrics need attention.</string>
+    <string name="summary_overall_attention">Needs attention — please look at the messages below.</string>
+
+    <string name="summary_zone_less">Less than expected</string>
+    <string name="summary_zone_normal">On target</string>
+    <string name="summary_zone_more">More than expected</string>
+
+    <string name="summary_channel_name">Daily summary</string>
+    <string name="summary_notif_title">Your daily summary is ready</string>
+
+    <!-- Rule-engine messages: %1$s = actual, %2$s = target -->
+    <string name="rule_sleep_less">You slept %1$s hours. Healthy adults aim for 7–9 h — sleep deficiency affects mood and concentration.</string>
+    <string name="rule_sleep_normal">You slept %1$s hours — right inside the healthy 7–9 h range. Nice rhythm.</string>
+    <string name="rule_sleep_more">You slept %1$s hours — more than the typical 7–9 h. Plenty of rest today.</string>
+
+    <string name="rule_walk_less">You walked %1$s minutes today. Adults benefit from at least 30 minutes of movement — try a short walk this evening.</string>
+    <string name="rule_walk_normal">You walked %1$s minutes — inside the healthy 30–90 min range.</string>
+    <string name="rule_walk_more">You walked %1$s minutes — more than 90 min of activity. Great job!</string>
+
+    <string name="rule_phone_less">Phone usage was %1$s hours — well below the 2–5 h band. Nicely balanced screen time.</string>
+    <string name="rule_phone_normal">Phone usage %1$s hours — inside the typical 2–5 h band.</string>
+    <string name="rule_phone_more">Phone usage was %1$s hours — above the 2–5 h band. Excessive screen time can reduce sleep quality.</string>
+
+    <string name="rule_talk_less">You talked %1$s minutes — under the healthy 15–90 min range. Reach out to someone today.</string>
+    <string name="rule_talk_normal">You talked %1$s minutes — inside the healthy 15–90 min range.</string>
+    <string name="rule_talk_more">You talked %1$s minutes — more than 90 min of social voice time. Good social day!</string>
+
+    <!-- Conversation-tone summary (today's voice / call sentiment) -->
+    <string name="tone_line">Today\'s conversation tone: %1$s</string>
+    <string name="tone_positive">mostly warm &amp; positive</string>
+    <string name="tone_neutral">mostly neutral / calm</string>
+    <string name="tone_negative">tense — anger / sadness detected</string>
+
+    <!-- ML insights -->
+    <string name="ml_section_title">ML insights (last 30 days)</string>
+    <string name="ml_anomaly_normal">No unusual pattern detected.</string>
+    <string name="ml_anomaly_alert">Unusual pattern detected in: %1$s</string>
+    <string name="ml_suggestion_title">Suggested targets for tomorrow</string>
+    <string name="ml_suggestion_body">Sleep %1$s h · Walk %2$d min · Phone %3$s h · Talk %4$d min</string>
+    <string name="ml_pattern_title">Weekly pattern</string>
+    <string name="ml_pattern_unknown">Need more data (≥7 days) to detect weekly patterns.</string>
+
+    <string name="ml_channel_name">Behavioural insights</string>
+    <string name="ml_anomaly_title">Unusual pattern detected</string>
+    <string name="ml_anomaly_message">Recent change in: %1$s. Open the Summary tab to learn more.</string>
+
+    <!-- Mood timer / window-end summary -->
+    <string name="mood_channel_name">Mood summary</string>
+    <string name="mood_notif_title">Your mood summary is ready</string>
+    <string name="mood_notif_message">Mostly %1$s during your check-in window. Tap to view details.</string>
+    <string name="mood_summary_title">How you\'ve been</string>
+    <string name="mood_summary_empty">We didn\'t catch enough to read your mood this time. Next time, start a window with the microphone on and just talk normally — we\'ll gently summarise how you sounded.</string>
+    <string name="mood_summary_range">Window: %1$s → %2$s</string>
+    <string name="mood_summary_stats">%1$d samples · negative %2$d%%</string>
+    <string name="mood_summary_ack">Got it</string>
+    <string name="mood_breakdown_title">Time per mood</string>
+    <string name="mood_transitions">Mood changes during this window: %1$d</string>
+    <string name="mood_hr_avg">Average heart rate: %1$d bpm</string>
+    <!-- AI (Groq) voice-transcript mood verdict shown on the window-end summary -->
+    <string name="mood_summary_ai_title">AI mood analysis</string>
+    <string name="mood_summary_ai_meta">Analysed %1$s · %2$s</string>
+    <string name="mood_summary_ai_pending">Your spoken-word mood analysis is being prepared. Open Tools → Voice notes in a moment to see the full breakdown.</string>
+    <string name="mood_notif_ai_title">Your mood analysis is ready</string>
+    <string name="mood_notif_ai_message">%1$s Tap to see how your mood was.</string>
+
+    <!-- Bedtime nudge (10:30 PM → "sleep before 11 PM" + optional "put your
+         phone down" if user is on social media). Fires only while a
+         monitoring window is active. -->
+    <string name="bedtime_channel_name">Bedtime reminders</string>
+    <string name="bedtime_channel_desc">Gentle nudges around 10:30 PM to help you wind down before 11 PM.</string>
+    <string name="bedtime_sleep_title">🌙 Time to wind down</string>
+    <string name="bedtime_sleep_body">It\'s after 10:30 PM. Going to bed before 11 PM helps you wake up rested and is best for long-term health.</string>
+    <string name="bedtime_phone_title">📵 Put the phone down</string>
+    <string name="bedtime_phone_body">You\'re scrolling within 30 minutes of bedtime. Closing social apps now helps your brain wind down — try a warm drink or a short stretch instead.</string>
+
+    <string name="mood_label_happy">Happy</string>
+    <string name="mood_label_neutral">Neutral</string>
+    <string name="mood_label_tired">Tired</string>
+    <string name="mood_label_stressed">Stressed</string>
+    <string name="mood_label_sad">Low / Sad</string>
+
+    <string name="mood_advice_happy">Great mood overall! Keep doing what works for you.</string>
+    <string name="mood_advice_neutral">Mostly steady. Consider a short walk or a chat with someone you trust.</string>
+    <string name="mood_advice_tired">Signs of tiredness — try to get more sleep and reduce screen time tonight.</string>
+    <string name="mood_advice_stressed">Restless signs detected. Try a 5-minute breathing exercise from the Tools tab.</string>
+    <string name="mood_advice_sad">Low mood detected. Be kind to yourself. If this lasts more than a few days, consider reaching out for support.</string>
+
+    <!-- Pre-flight when starting a monitoring window -->
+    <string name="tools_need_consent">Please complete the consent screen first — sensors stay off until then.</string>
+    <string name="tools_usage_access_title">Allow usage access</string>
+    <string name="tools_usage_access_message">To measure your phone-use time, screen unlocks and social-app ratio, BioMarker needs the special "Usage access" permission. Tap "Open Settings" and toggle BioMarker on — without this, those metrics stay at 0.</string>
+    <string name="tools_usage_access_open">Open Settings</string>
+    <string name="tools_usage_access_skip">Skip for now</string>
+
+    <!-- Voice notes (transcripts captured by passive voice monitor + Groq AI mood timeline) -->
+    <string name="tools_voice_notes">Voice notes &amp; AI mood timeline</string>
+    <string name="voice_notes_title">Voice notes</string>
+    <string name="voice_notes_header">What you said</string>
+    <string name="voice_notes_subhead">Everything you said (recognised on-device) and typed on the in-app keyboard during your monitoring window (Bangla + English). At window end, AI builds one fine-grained mood timeline from both.</string>
+    <string name="voice_notes_status_count">Showing %1$d entries from this window.</string>
+    <string name="voice_notes_empty_status">Nothing captured yet for this window.</string>
+    <string name="voice_notes_empty_hint">Start a monitoring window from Tools, then speak or type — your words appear here. They never leave the device unless you tap "Analyse with AI".</string>
+    <string name="voice_notes_list_header">Entries</string>
+    <string name="voice_notes_words">words</string>
+    <string name="voice_notes_src_spoken">🎙 spoken</string>
+    <string name="voice_notes_src_typed">⌨ typed</string>
+    <string name="voice_notes_run_ai">Analyse with AI now</string>
+    <string name="voice_notes_clear">Clear</string>
+    <!-- Translator UI (on-device ML Kit, Bangla ↔ English) -->
+    <string name="translate_to_bn">🌐 অনুবাদ</string>
+    <string name="translate_to_en">🌐 Translate</string>
+    <string name="translate_show_original">↩ Original</string>
+    <string name="translate_in_progress">Translating…</string>
+    <string name="translate_failed">Translation failed — check the network for the first-time model download.</string>
+    <string name="voice_notes_clear_title">Clear voice notes?</string>
+    <string name="voice_notes_clear_msg">All stored utterances and the latest AI verdict will be deleted. This cannot be undone.</string>
+    <string name="voice_notes_ai_failed">AI analysis failed. Check your internet connection or try again.</string>
+    <string name="voice_notes_verdict_meta">Generated %1$s · %2$s</string>
+    <string name="voice_notes_mood_pos">positive</string>
+    <string name="voice_notes_mood_neg">negative</string>
+    <string name="voice_notes_mood_neutral">neutral</string>
+</resources>
